@@ -19,7 +19,7 @@ Finally, a user may want to delete a recipe upload.
 
 ### User stories
 As someone with lots of family recipes I want:
-* A safe space to store them in case my paper-based records get damaged or destroyed
+* A safe space to store them in case my paper notes get damaged or destroyed
 * To be able to edit my records in case I make a mistake or improvement
 * To share which of my family members the recipe came from
 * For others to be able to see and use my recipe, but not edit or delete them
