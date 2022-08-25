@@ -4,7 +4,7 @@ class Diet(db.Model):
     # schema for the Diet model
     id = db.Column(db.Integer, primary_key=True)
     diet_type = db.Column(db.String(30), unique=True, nullable=False)
-    recipes = db.relationship("Recipe", backref="diet", cascade="all, delete", lazy=True)
+    recipe_id = db.relationship("Recipe", backref="diet", cascade="all, delete", lazy=True)
 
     def __repr__(self):
         # __repr__ to represent self as a string
