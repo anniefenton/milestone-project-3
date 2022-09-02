@@ -1,12 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
+<br>
+<div class="home-image">
+    <img class="materialboxed responsive-img" src="{{ url_for('static', filename='images/home-hero.jpg') }}" alt="food table">
+</div>
 
-Hero image: My family Recipes
-<br>
-Welcome back! [Log In]
-<br>
-New Here? [Register]
-<br>
-Just Browsing? [View the recipes]
+<div class="center flow-text">
+    <br>
+    <h3>Welcome back! [Log In]</h1>
+    <br>
+    <h3>New Here? [Register]</h3>
+    <br>
+    <h3>Just Browsing? [View the recipes] </h3>
+    <br>
+</div>
+
 
 {% endblock %}
