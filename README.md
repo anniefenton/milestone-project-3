@@ -42,3 +42,5 @@ Edit and delete
 ### Add recipes page
 ### Navbar and footer
 
+Credits: Home image - Wasa Crispbread
+

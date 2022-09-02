@@ -1,5 +1,20 @@
 from family_recipes import db
 
+
+class User(db.Model):
+    # schema for the User model
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(30), unique=False, nullable=False)
+    last_name = db.Column(db.String(30), unique=False, nullable=False)
+    username = db.Column(db.String(15), unique=True, nullable=False)
+    email = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(30), unique=True, nullable=False)
+
+    def __repr__(self):
+        # __repr__ to represent self as a string
+        return self.diet_type
+
+
 class Diet(db.Model):
     # schema for the Diet model
     id = db.Column(db.Integer, primary_key=True)
@@ -25,3 +40,5 @@ class Recipe(db.Model):
     def __repr__(self):
         # __repr__ to represent self as a string
         return f"#{self.id} - Recipe:{self.recipe_name} | Family Member: {self.family_member}"
+
+
