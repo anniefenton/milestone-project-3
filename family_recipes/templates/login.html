@@ -1,10 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
-
-Log In
+<div>
+    <h3 class="center">Please Log In</h3>
+</div>
+<form>
+    <!--Username-->
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="fa-solid fa-user-pen prefix"></i>
+            <input id="username" type="text" class="validate" required>
+            <label for="username">Username</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="fa-solid fa-lock prefix"></i>
+            <input id="password" name="password" type="password" class="validate" required>
+            <label for="password">Password</label>
+        </div>
+    </div>
+    <div class="center">
+        <button class="btn-large waves-effect waves-light" type="submit" name="action">
+            Submit  <i class="fa-regular fa-paper-plane"></i>
+        </button>
+        <button class="btn-large waves-effect waves-light" name="action">
+            Reset  <i class="fa-regular fa-circle-xmark"></i>
+        </button>
+    </div>
+</form>
 <br>
-Please log in
-<br>
-Log in form
 
 {% endblock %}
