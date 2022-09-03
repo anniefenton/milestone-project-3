@@ -16,7 +16,7 @@
                 <span class="card-title center">{{ diet.diet_type }}</span>
             </div>
             <div class="card-action center">
-                <a href="#" class="btn waves-effect waves-light">Edit <i class="fa-solid fa-pen"></i></a>
+                <a href="{{ url_for('edit_diet', diet_id=diet.id) }}" class="btn waves-effect waves-light">Edit <i class="fa-solid fa-pen"></i></a>
                 <a href="#" class="btn waves-effect waves-light">Delete <i class="fa-solid fa-xmark"></i></a>
             </div>
         </div>

@@ -57,7 +57,7 @@ def diet():
     return render_template("diet.html", diet=diet)
 
 
-# Manage Diets
+# Add Diets
 @app.route("/add_diet", methods=["GET", "POST"])
 def add_diet():
     if request.method == "POST":
@@ -66,3 +66,13 @@ def add_diet():
         db.session.commit()
         return redirect(url_for("diet"))
     return render_template("add_diet.html")
+
+
+@app.route("/edit_diet/<int:diet_id>", methods=["GET", "POST"])
+def edit_diet(diet_id):
+    diet = Diet.query.get_or_404(diet_id)
+    if request.method == "POST":
+        diet.diet_type = request.form.get("diet_type")
+        db.session.commit()
+        return redirect(url_for("diet"))
+    return render_template("edit_diet.html", diet=diet)
