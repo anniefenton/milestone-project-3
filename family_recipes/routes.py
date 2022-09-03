@@ -76,3 +76,11 @@ def edit_diet(diet_id):
         db.session.commit()
         return redirect(url_for("diet"))
     return render_template("edit_diet.html", diet=diet)
+
+
+@app.route("/delete_diet/<int:diet_id>")
+def delete_diet():
+    diet = Diet.query.get_or_404(diet_id)
+    db.session.delete(diet)
+    db.session.commit()
+    return redirect(url_for("diet"))
