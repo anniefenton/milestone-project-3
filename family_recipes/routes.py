@@ -50,6 +50,12 @@ def recipes():
     return render_template("recipes.html")
 
 
+# Add recipes
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
+
+
 # Diet
 @app.route("/diet")
 def diet():
