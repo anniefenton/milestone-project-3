@@ -8,41 +8,6 @@ from family_recipes.models import User, Diet, Recipe
 def home():
     return render_template("home.html")
 
-#User Log In
-@app.route("/login")
-def login():
-    return render_template("login.html")
-
-# Register User
-@app.route("/register", methods=["GET", "POST"])
-def register():
-
-    if request.method == "POST":
-        existing_user = User.query.filter(
-            User.username == request.form.get("username").lower()).all()
-
-        if existing_user:
-            flash("This username already exists")
-            return redirect(url_for("register"))
-
-        new_user = User(
-            username=request.form.get("username").lower(),
-            email=request.form.get("email").lower(),
-            password=generate_password_hash(request.form.get("password")),
-        )
-
-        test_pass = generate_password_hash(request.form.get("password"))
-        print(f"Pass: {test_pass}")
-        print(f"Length: {len(test_pass)}")
-
-        db.session.add(new_user)
-        db.session.commit()
-
-        flash('Registration successful!')
-        return redirect(url_for('login'))
-
-    return render_template("register.html")
-
 
 # Recipes
 @app.route("/recipe")
@@ -87,6 +52,15 @@ def edit_recipe(recipe_id):
         db.session.commit()
         return redirect(url_for("recipe"))
     return render_template("edit_recipe.html", recipe=recipe, diet=diet)
+
+
+# Delete Recipes
+@app.route("/delete_recipe/<int:recipe_id>")
+def delete_recipe(recipe_id):
+    recipe = Recipe.query.get_or_404(recipe_id)
+    db.session.delete(recipe)
+    db.session.commit()
+    return redirect(url_for("recipe"))
 
 
 # Diet

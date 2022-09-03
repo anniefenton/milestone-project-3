@@ -4,15 +4,12 @@
 <div class="home-image">
     <img class="materialboxed responsive-img" src="{{ url_for('static', filename='images/home-hero.jpg') }}" alt="food table">
 </div>
-
+<br>
 <div class="center flow-text">
+    <h4>Welcome back!</h4>
     <br>
-    <h3>Welcome back!<a href="{{ url_for('login') }}"> Log In <i class="fa-solid fa-arrow-right-to-bracket"></i></a></h3>
-    <br>
-    <h3>New Here?<a href="{{ url_for('register') }}"> Register <i class="fa-solid fa-file-circle-plus"></i></a></h3>
-    <br>
-    <h3>Just Browsing?<a href="{{ url_for('recipe') }}"> View our Recipes <i class="fa-solid fa-bowl-food"></i></a></h3>
-    <br>
+    <a href="{{ url_for('recipe') }}" class="waves-effect waves-light btn-large"> View our Recipes <i class="fa-solid fa-bowl-food"></i></a></h4>
+    <a href="{{ url_for('diet') }}" class="waves-effect waves-light btn-large"> Manage Diets <i class="fa-solid fa-list"></i></a></h4>
 </div>
-
+<br>
 {% endblock %}
