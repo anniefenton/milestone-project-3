@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<br>
 <div class="home-image">
-    <img class="materialboxed responsive-img" src="{{ url_for('static', filename='images/home-hero.jpg') }}" alt="food table">
+    <img class="materialboxed responsive-img" src="{{ url_for('static', filename='images/home-hero.jpg') }}" alt="Busy food table">
 </div>
 <br>
-<div class="center flow-text">
-    <h4>Welcome back!</h4>
+<main class="container">
+    <div class="center flow-text">
+        <h4>Welcome back!</h4>
+        <br>
+        <a href="{{ url_for('recipe') }}" class="waves-effect waves-light btn-large"> View our Recipes <i class="fa-solid fa-bowl-food"></i></a></h4>
+        <a href="{{ url_for('diet') }}" class="waves-effect waves-light btn-large"> Manage Diets <i class="fa-solid fa-list"></i></a></h4>
+    </div>
     <br>
-    <a href="{{ url_for('recipe') }}" class="waves-effect waves-light btn-large"> View our Recipes <i class="fa-solid fa-bowl-food"></i></a></h4>
-    <a href="{{ url_for('diet') }}" class="waves-effect waves-light btn-large"> Manage Diets <i class="fa-solid fa-list"></i></a></h4>
-</div>
-<br>
+    <br>
+</main>
 {% endblock %}

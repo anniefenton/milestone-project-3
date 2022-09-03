@@ -1,27 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
+<main class="container">
+    <h3 class="center">Edit Diet</h3>
 
-<h3 class="center">Edit Diet</h3>
-
-<div class="row center">
-    <form method="POST" action="{{ url_for('edit_diet', diet_id=diet.id) }}">
-        <!--Diet Type-->
-        <div class="row">
-            <div class="input-field col-12">
-                <i class="fa-solid fa-utensils prefix"></i>
-                <input id="diet_type" name="diet_type" value="{{ diet.diet_type }}" type="text" minlength="1" maxlength="30" class="validate" required>
-                <label for="diet_type">Diet Type</label>
+    <div class="row center">
+        <form method="POST" action="{{ url_for('edit_diet', diet_id=diet.id) }}">
+            <!--Diet Type-->
+            <div class="row">
+                <div class="input-field col-12">
+                    <i class="fa-solid fa-utensils prefix"></i>
+                    <input id="diet_type" name="diet_type" value="{{ diet.diet_type }}" type="text" minlength="1" maxlength="30" class="validate" required>
+                    <label for="diet_type">Diet Type</label>
+                </div>
             </div>
-        </div>
-        <!--Submit Button-->
-        <div class="row">
-            <div class="col-12 center">
-                <button class="btn-large waves-effect waves-light" type="submit">
-                    Submit <i class="fa-solid fa-edit"></i>
-                </button>
+            <!--Submit Button-->
+            <div class="row">
+                <div class="col-12 center">
+                    <button class="btn-large waves-effect waves-light" type="submit">
+                        Submit <i class="fa-solid fa-edit"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-    </form>
-</div>
-
+        </form>
+    </div>
+</main>
 {% endblock %}

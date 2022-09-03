@@ -31,10 +31,10 @@
         </ul>
     </header>
 
-    <main class="container">
-        {% block content %}
-        {% endblock %}
-    </main>
+    
+    {% block content %}
+    {% endblock %}
+    
     <!--Tap Target Element-->
 <div class="fixed-action-btn tapmenu">
     <a id="menu" class="btn btn-floating btn-large cyan" onclick="$('.tap-target').tapTarget('open')">

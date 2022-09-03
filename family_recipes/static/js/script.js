@@ -1,5 +1,3 @@
-$('.tap-target').tapTarget('close');
-
 document.addEventListener('DOMContentLoaded', function() {
   // sidenav initialisation
   let sidenav = document.querySelectorAll('.sidenav');

@@ -1,78 +1,78 @@
 {% extends "base.html" %}
 {% block content %}
+<main class="container">
+    <h3 class="center">Add Recipe</h3>
 
-<h3 class="center">Add Recipe</h3>
-
-<div class="row center">
-    <form method="POST" action="{{ url_for('add_recipe') }}">
-        <!--Recipe Name-->
-        <div class="row">
-            <div class="input-field col-12">
-                <i class="fa-solid fa-utensils prefix"></i>
-                <input id="recipe_name" name="recipe_name" type="text" minlength="1" maxlength="30" class="validate" required>
-                <label for="recipe_name">Recipe Name</label>
+    <div class="row center">
+        <form method="POST" action="{{ url_for('add_recipe') }}">
+            <!--Recipe Name-->
+            <div class="row">
+                <div class="input-field col-12">
+                    <i class="fa-solid fa-utensils prefix"></i>
+                    <input id="recipe_name" name="recipe_name" type="text" minlength="1" maxlength="30" class="validate" required>
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
             </div>
-        </div>
-        <!--Family Member-->
-        <div class="row">
-            <div class="input-field col-12">
-                <i class="fa-solid fa-people-roof prefix"></i>
-                <input id="family_member" name="family_member" type="text" minlength="1" maxlength="30" class="validate" required>
-                <label for="family_member">Family Member</label>
+            <!--Family Member-->
+            <div class="row">
+                <div class="input-field col-12">
+                    <i class="fa-solid fa-people-roof prefix"></i>
+                    <input id="family_member" name="family_member" type="text" minlength="1" maxlength="30" class="validate" required>
+                    <label for="family_member">Family Member</label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <!--Time to make-->
-            <div class="input-field col s12 m6 l6">
-                <i class="fa-solid fa-clock prefix"></i>
-                <input id="time_to_make" name="time_to_make" type="number" minlength="1" maxlength="30" class="validate" required>
-                <label for="time_to_make">Time to Make (in minutes)</label>
+            <div class="row">
+                <!--Time to make-->
+                <div class="input-field col s12 m6 l6">
+                    <i class="fa-solid fa-clock prefix"></i>
+                    <input id="time_to_make" name="time_to_make" type="number" minlength="1" maxlength="30" class="validate" required>
+                    <label for="time_to_make">Time to Make (in minutes)</label>
+                </div>
+                <!--Serving Size-->
+                <div class="input-field col s12 m6 l6">
+                    <i class="fa-solid fa-bowl-food prefix"></i>
+                    <input id="serving_size" name="serving_size" type="number" minlength="1" maxlength="30" class="validate" required>
+                    <label for="serving_size">Serving Size</label>
+                </div>
             </div>
-            <!--Serving Size-->
-            <div class="input-field col s12 m6 l6">
-                <i class="fa-solid fa-bowl-food prefix"></i>
-                <input id="serving_size" name="serving_size" type="number" minlength="1" maxlength="30" class="validate" required>
-                <label for="serving_size">Serving Size</label>
+            <!--Ingredients-->
+            <div class="row">
+                <div class="input-field col-12">
+                    <i class="fa-solid fa-carrot prefix"></i>
+                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" required></textarea>
+                    <label for="ingredients">Ingredients List</label>
+                </div>
             </div>
-        </div>
-        <!--Ingredients-->
-        <div class="row">
-            <div class="input-field col-12">
-                <i class="fa-solid fa-carrot prefix"></i>
-                <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" required></textarea>
-                <label for="ingredients">Ingredients List</label>
+            <!--Method-->
+            <div class="row">
+                <div class="input-field col-12">
+                    <i class="fa-solid fa-list prefix"></i>
+                    <textarea id="method" name="method" class="materialize-textarea validate" required></textarea>
+                    <label for="method">Method</label>
+                </div>
             </div>
-        </div>
-        <!--Method-->
-        <div class="row">
-            <div class="input-field col-12">
-                <i class="fa-solid fa-list prefix"></i>
-                <textarea id="method" name="method" class="materialize-textarea validate" required></textarea>
-                <label for="method">Method</label>
+            <!--diet_id-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <select name="diet_id" id="diet_id" class="validate">
+                        <option value="" disabled selected>Diet Type</option>
+                        {% for diet in diets %}
+                            <option value="{{ Diet.id }}">{{ Diet.diet_type }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="diet_id">Choose Diet Type</label>
+                </div>
             </div>
-        </div>
-        <!--diet_id-->
-        <div class="row">
-            <div class="input-field col s12">
-                <select name="diet_id" id="diet_id" class="validate">
-                    <option value="" disabled selected>Diet Type</option>
-                    {% for diet in diets %}
-                        <option value="{{ Diet.id }}">{{ Diet.diet_type }}</option>
-                    {% endfor %}
-                </select>
-                <label for="diet_id">Choose Diet Type</label>
+            <br>
+            <!--Submit Button-->
+            <div class="row">
+                <div class="col-12 center">
+                    <button class="btn-large waves-effect waves-light" type="submit">
+                        Add Recipe <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-        <br>
-        <!--Submit Button-->
-        <div class="row">
-            <div class="col-12 center">
-                <button class="btn-large waves-effect waves-light" type="submit">
-                    Add Recipe <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
-
+        </form>
+    </div>
+</main>
 {% endblock %}
