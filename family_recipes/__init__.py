@@ -14,4 +14,3 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from family_recipes import routes  # noqa
-
