@@ -8,12 +8,12 @@ from family_recipes.models import User, Diet, Recipe
 def home():
     return render_template("home.html")
 
-
+#User Log In
 @app.route("/login")
 def login():
     return render_template("login.html")
 
-
+# Register User
 @app.route("/register", methods=["GET", "POST"])
 def register():
 
@@ -47,7 +47,8 @@ def register():
 # Recipes
 @app.route("/recipe")
 def recipe():
-    return render_template("recipe.html")
+    recipe = list(Recipe.query.order_by(Recipe.id).all())
+    return render_template("recipe.html", recipes=recipe)
 
 
 # Add recipes
@@ -69,11 +70,30 @@ def add_recipe():
         return redirect(url_for("recipe"))
     return render_template("add_recipe.html", diet=diet)
 
+
+# Edit recipes
+@app.route("/edit_recipe/<int:recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    recipe = Recipe.query.get_or_404(recipe_id)
+    diet = list(Diet.query.order_by(Diet.diet_type).all())
+    if request.method == "POST":
+        recipe.recipe_name = request.form.get("recipe_name")
+        recipe.family_member = request.form.get("family_name")
+        recipe.time_to_make = request.form.get("time_to_make")
+        recipe.serving_size = request.form.get("serving_size")
+        recipe.ingredients = request.form.get("ingredients")
+        recipe.method = request.form.get("method")
+        recipe.diet_id = request.form.get("diet_id")
+        db.session.commit()
+        return redirect(url_for("recipe"))
+    return render_template("edit_recipe.html", recipe=recipe, diet=diet)
+
+
 # Diet
 @app.route("/diet")
 def diet():
     diet = list(Diet.query.order_by(Diet.diet_type).all())
-    return render_template("diet.html", diet=diet)
+    return render_template("diet.html", diets=diet)
 
 
 # Add Diets
@@ -87,6 +107,7 @@ def add_diet():
     return render_template("add_diet.html")
 
 
+#Edit Diet
 @app.route("/edit_diet/<int:diet_id>", methods=["GET", "POST"])
 def edit_diet(diet_id):
     diet = Diet.query.get_or_404(diet_id)
@@ -97,8 +118,9 @@ def edit_diet(diet_id):
     return render_template("edit_diet.html", diet=diet)
 
 
+# Delete Diet
 @app.route("/delete_diet/<int:diet_id>")
-def delete_diet():
+def delete_diet(diet_id):
     diet = Diet.query.get_or_404(diet_id)
     db.session.delete(diet)
     db.session.commit()
