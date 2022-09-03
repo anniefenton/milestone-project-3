@@ -29,7 +29,7 @@ class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     recipe_name = db.Column(db.String(60), unique=True, nullable=False)
     family_member = db.Column(db.String(30), nullable=False)
-    time_to_make = db.Column(db.Time, nullable=False)
+    time_to_make = db.Column(db.Integer, nullable=False)
     serving_size = db.Column(db.Integer, nullable=False)
     ingredients = db.Column(db.Text, nullable=False)
     method = db.Column(db.Text, nullable=False)

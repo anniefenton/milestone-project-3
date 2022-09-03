@@ -44,17 +44,30 @@ def register():
     return render_template("register.html")
 
 
-# recipes
-@app.route("/recipes")
-def recipes():
-    return render_template("recipes.html")
+# Recipes
+@app.route("/recipe")
+def recipe():
+    return render_template("recipe.html")
 
 
 # Add recipes
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    return render_template("add_recipe.html")
-
+    diet = list(Diet.query.order_by(Diet.diet_type).all())
+    if request.method == "POST":
+        recipe = Recipe(
+            recipe_name=request.form.get("recipe_name"),
+            family_member=request.form.get("family_name"),
+            time_to_make=request.form.get("time_to_make"),
+            serving_size=request.form.get("serving_size"),
+            ingredients=request.form.get("ingredients"),
+            method=request.form.get("method"),
+            diet_id=request.form.get("diet_id")
+        )
+        db.session.add(recipe)
+        db.session.commit()
+        return redirect(url_for("recipe"))
+    return render_template("add_recipe.html", diet=diet)
 
 # Diet
 @app.route("/diet")
