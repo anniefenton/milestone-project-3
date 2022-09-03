@@ -8,9 +8,11 @@ from family_recipes.models import User, Diet, Recipe
 def home():
     return render_template("home.html")
 
+
 @app.route("/login")
 def login():
     return render_template("login.html")
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -22,7 +24,7 @@ def register():
         if existing_user:
             flash("This username already exists")
             return redirect(url_for("register"))
-            
+
         new_user = User(
             username=request.form.get("username").lower(),
             email=request.form.get("email").lower(),
@@ -41,6 +43,26 @@ def register():
 
     return render_template("register.html")
 
+
+# recipes
 @app.route("/recipes")
 def recipes():
     return render_template("recipes.html")
+
+
+# Diet
+@app.route("/diet")
+def diet():
+    diet = list(Diet.query.order_by(Diet.diet_type).all())
+    return render_template("diet.html", diet=diet)
+
+
+# Manage Diets
+@app.route("/add_diet", methods=["GET", "POST"])
+def add_diet():
+    if request.method == "POST":
+        diet = Diet(diet_type=request.form.get("diet_type"))
+        db.session.add(diet)
+        db.session.commit()
+        return redirect(url_for("diet"))
+    return render_template("add_diet.html")

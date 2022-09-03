@@ -40,5 +40,3 @@ class Recipe(db.Model):
     def __repr__(self):
         # __repr__ to represent self as a string
         return f"#{self.id} - Recipe:{self.recipe_name} | Family Member: {self.family_member}"
-
-

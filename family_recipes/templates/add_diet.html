@@ -1,4 +1,25 @@
-{% extends base.html %}
+{% extends "base.html" %}
 {% block content %}
-Add Diet
-{%%}
+<h3 class="center">Add Diet</h3>
+<div class="row center">
+    <form method="POST" action="{{ url_for('add_diet') }}">
+        <!--Diet Type-->
+        <div class="row">
+            <div class="input-field col-12">
+                <i class="fa-solid fa-utensils prefix"></i>
+                <input id="diet_type" name="diet_type" type="text" minlength="1" maxlength="30" class="validate" required>
+                <label for="diet_type">Diet Type</label>
+            </div>
+        </div>
+        <!--Submit Button-->
+        <div class="row">
+            <div class="col-12 center">
+                <button class="btn-large waves-effect waves-light" type="submit">
+                    Add Diet <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
