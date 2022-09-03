@@ -1,4 +1,4 @@
-# Recipe site
+# Family Recipes
 
 ## UX
 ### Project Goals
