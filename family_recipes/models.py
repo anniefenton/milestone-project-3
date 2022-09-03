@@ -4,8 +4,6 @@ from family_recipes import db
 class User(db.Model):
     # schema for the User model
     id = db.Column(db.Integer, primary_key=True)
-    first_name = db.Column(db.String(30), unique=False, nullable=False)
-    last_name = db.Column(db.String(30), unique=False, nullable=False)
     username = db.Column(db.String(15), unique=True, nullable=False)
     email = db.Column(db.String(30), unique=True, nullable=False)
     password = db.Column(db.String(255), unique=True, nullable=False)
