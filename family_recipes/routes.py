@@ -23,7 +23,7 @@ def add_recipe():
     if request.method == "POST":
         recipe = Recipe(
             recipe_name=request.form.get("recipe_name"),
-            family_member=request.form.get("family_name"),
+            family_member=request.form.get("family_member"),
             time_to_make=request.form.get("time_to_make"),
             serving_size=request.form.get("serving_size"),
             ingredients=request.form.get("ingredients"),

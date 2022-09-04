@@ -165,6 +165,10 @@ The navigation has been designed to be simple and intuitive.
 
 A bug was encountered when editing the database schema. Changes to the scheme were not shwoing on the deployed site. After a while the fix was found - each edit of the schema had to be manually migrated across to flask using Flask-Migrate and Alembic.
 
+The two tables in my databse aslo weren't connected. This ended up being a simple typo error which once resolved, worked perfectly.
+
+I also wanted to implement a `.tap-target` feature from Materialize CSS to invite the user to send feedback about teh site, yet when it is clicked, the pop-up box does not show as it's supposed to. I will remedy this in the future. 
+
 ## Technologies used
 ### **Languages**
 - HTML5
