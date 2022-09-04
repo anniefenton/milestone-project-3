@@ -25,13 +25,13 @@
                 <!--Time to make-->
                 <div class="input-field col s12 m6 l6">
                     <i class="fa-solid fa-clock prefix"></i>
-                    <input id="time_to_make" name="time_to_make" type="number" minlength="1" maxlength="30" class="validate" required>
+                    <input id="time_to_make" name="time_to_make" type="number" class="validate" required>
                     <label for="time_to_make">Time to Make (in minutes)</label>
                 </div>
                 <!--Serving Size-->
                 <div class="input-field col s12 m6 l6">
                     <i class="fa-solid fa-bowl-food prefix"></i>
-                    <input id="serving_size" name="serving_size" type="number" minlength="1" maxlength="30" class="validate" required>
+                    <input id="serving_size" name="serving_size" type="number" class="validate" required>
                     <label for="serving_size">Serving Size</label>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     <select name="diet_id" id="diet_id" class="validate">
                         <option value="" disabled selected>Diet Type</option>
                         {% for diet in diets %}
-                            <option value="{{ diet_id }}">{{ diet.diet_id }}</option>
+                            <option value="{{ diet }}">{{ diet }}</option>
                         {% endfor %}
                     </select>
                     <label for="diet_id">Choose Diet Type</label>

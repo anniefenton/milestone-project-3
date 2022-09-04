@@ -28,12 +28,12 @@ def add_recipe():
             serving_size=request.form.get("serving_size"),
             ingredients=request.form.get("ingredients"),
             method=request.form.get("method"),
-            diet_id=request.form.get("diet_id")
+            diet_id=request.form.get("diet")
         )
         db.session.add(recipe)
         db.session.commit()
         return redirect(url_for("recipe"))
-    return render_template("add_recipe.html", diet=diet)
+    return render_template("add_recipe.html", diets=diet)
 
 
 # Edit recipes
@@ -51,7 +51,7 @@ def edit_recipe(recipe_id):
         recipe.diet_id = request.form.get("diet_id")
         db.session.commit()
         return redirect(url_for("recipe"))
-    return render_template("edit_recipe.html", recipe=recipe, diet=diet)
+    return render_template("edit_recipe.html", recipe=recipe, diets=diet)
 
 
 # Delete Recipes
