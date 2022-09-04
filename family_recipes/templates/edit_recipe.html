@@ -2,7 +2,7 @@
 {% block content %}
 <main class="container">
     <h3 class="center">Edit Recipe</h3>
-
+    <!--Edit recipe form, written with inspiration from Code Institute's tutorial videos-->
     <div class="row center">
         <form method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe.id) }}">
             <!--Recipe Name-->

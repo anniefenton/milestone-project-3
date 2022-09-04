@@ -1,17 +1,19 @@
 {% extends "index.html" %}
 {% block content %}
+<!--Hero image-->
 <div class="hero-image">
     <img class="materialboxed responsive-img" src="{{ url_for('static', filename='images/recipe-hero.jpg') }}" alt="Open notebook">
 </div>
 <main class="container">
     <h3 class="center">Recipes</h3>
-
+    <!--Button to add recipes-->
     <div class="center">
         <a href="{{ url_for('add_recipe') }}" class="btn-large waves-effect waves-light">
             Add Recipe  <i class="fa-solid fa-plus"></i>
         </a>
     </div>
     <br>
+    <!--Card to display recipe information, written with inspiration from Code Institute's tutorial videos-->
     <div class="row">
         {% for recipe in recipes %}
         <div class="col s12 m6">

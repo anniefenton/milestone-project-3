@@ -1,5 +1,6 @@
 {% extends "index.html" %}
 {% block content %}
+<!--Hero image-->
 <div class="hero-image">
     <img src="{{ url_for('static', filename='images/diet-hero-crop.jpg') }}" class="responsive-img" alt="Close up shot of food and crockery">
 </div>
@@ -13,8 +14,7 @@
             </a>
         </div>
         <br>
-
-        <!--Diet cards-->
+        <!--Diet cards, written with inspiration from Code Institute's tutorial videos-->
         <div class="row">
             {% for diet in diets %}
             <div class="col s12 m6 l4">
@@ -23,11 +23,9 @@
                         <span class="card-title center">{{ diet.diet_type }}</span>
                     </div>
                     <div class="card-action center">
-                        
                         <!--Edit and Delete buttons-->
                         <a href="{{ url_for('edit_diet', diet_id=diet.id) }}" class="btn waves-effect waves-light indigo lighten-1">Edit <i class="fa-solid fa-pen"></i></a>
                         <a href="#modal-{{ diet.id }}" class="btn waves-effect waves-light modal-trigger red lighten-2">Delete <i class="fa-solid fa-xmark"></i></a>
-                        
                         <!--Modal content-->
                         <div id="modal-{{ diet.id }}" class="modal center">
                             <div class="modal-content">

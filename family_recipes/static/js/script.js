@@ -14,4 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // select box initialisation
   let select = document.querySelectorAll('select');
   M.FormSelect.init(select);
+
+  var elem = document.querySelectorAll('.tap-target');
+  var instances = M.TapTarget.init(elem, options);
 });

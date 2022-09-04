@@ -2,7 +2,7 @@
 {% block content %}
 <main class="container">
     <h3 class="center">Add Recipe</h3>
-
+    <!--Add recipe form, written with inspiration from Code Institute's tutorial videos-->
     <div class="row center">
         <form method="POST" action="{{ url_for('add_recipe') }}">
             <!--Recipe Name-->
@@ -54,7 +54,6 @@
             <!--diet_id-->
             <div class="row">
                 <div class="input-field col s12">
-                    
                     <select name="diet_id" id="diet_id" class="validate">
                         <option value="" disabled selected>Diet Type</option>
                         {% for diet in diets %}
