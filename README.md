@@ -102,6 +102,7 @@ Every delete button on every card has a defensive programming modal built in. Wh
 
 ### **Features left to implement**
 - A user authentication system where multiple users could log in and use this site. 
+- A profile area for users where they can manage their uploads.
 
 ## Design Choices
 
@@ -173,12 +174,19 @@ A bug was encountered when editing the database schema. Changes to the scheme we
 
 ### **Programmes, Libraries and Frameworks**
 - *Balsamiq* to create wireframes for design concepts
+- *Chrome DevTools* to check responsivness of the site and to help with debugging issues
+- *Flask* for creating the web app
 - *Font Awesome* for icons on pages and in the footer
 - *Git* for verson control
 - *GitHub* to store the project after publication from GitPod
 - *GitPod* to build the site
+- *Heroku* to deploy the live site
+- *Jinja* as a templating engine used to create the Flask app
 - *Materialize CSS* for styling, cards, interactive elements, and grid systems
+- *pip* to install the packages for the site
+- *PostgreSQL* for the relational database that stores recipe information and the diet categories.
 - *Unsplash* for open-source images used in the site
+- *Werkzeug* to catch errors
 
 ## Deployment
 ### How to run this project locally
