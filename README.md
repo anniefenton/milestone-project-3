@@ -1,5 +1,38 @@
 # Family Recipes
-
+![Image showing responsive site design](family_recipes/static/images/responsive.png)
+## Contents
+### [UX](https://github.com/anniefenton/milestone-project-3#ux)
+- [Project Goals](https://github.com/anniefenton/milestone-project-3#project-goals)
+- [User Goals](https://github.com/anniefenton/milestone-project-3#user-goals)
+- [User Stories](https://github.com/anniefenton/milestone-project-3#user-stories)
+### [Site Features](https://github.com/anniefenton/milestone-project-3#site-feaures)
+- [Home/Landing Page](https://github.com/anniefenton/milestone-project-3#home--landing-page)
+- [Recipes Page](https://github.com/anniefenton/milestone-project-3#recipies-page)
+- [Add Recipes Page](https://github.com/anniefenton/milestone-project-3#add-recipes-page)
+- [Edit Recipes Page](https://github.com/anniefenton/milestone-project-3#edit-recipes)
+- [Diet Page](https://github.com/anniefenton/milestone-project-3#diet-page)
+- [Add Diet Page](https://github.com/anniefenton/milestone-project-3#add-diet-page)
+- [Navbar and Footer](https://github.com/anniefenton/milestone-project-3#navbar-and-footer)
+- [Defensive Programming](https://github.com/anniefenton/milestone-project-3#defensive-programming)
+- [Features Left to Implement](https://github.com/anniefenton/milestone-project-3#features-left-to-implement)
+### [Design Choices](https://github.com/anniefenton/milestone-project-3#design-choices)
+- [Wireframes](https://github.com/anniefenton/milestone-project-3#wireframes)
+- [Images](https://github.com/anniefenton/milestone-project-3#images)
+- [Font and Colours](https://github.com/anniefenton/milestone-project-3#font-and-colours)
+### [Testing](https://github.com/anniefenton/milestone-project-3#testing)
+- [Manual Testing](https://github.com/anniefenton/milestone-project-3#manual---testing-user-stories)
+- [Bugs Encountered](https://github.com/anniefenton/milestone-project-3#bugs-encountered)
+### [Technologies Used](https://github.com/anniefenton/milestone-project-3#technologies-used)
+- [Languages](https://github.com/anniefenton/milestone-project-3#languages)
+- [Programmes, Libraries, and Frameworks](https://github.com/anniefenton/milestone-project-3#programmes-libraries-and-frameworks)
+### [Deployment](https://github.com/anniefenton/milestone-project-3#deployment)
+- [How to run this project locally](https://github.com/anniefenton/milestone-project-3#how-to-run-this-project-locally)
+- [Forking the GitHub repository](https://github.com/anniefenton/milestone-project-3#forking-the-github-repository)
+- [Cloning a repository](https://github.com/anniefenton/milestone-project-3#cloning-a-repository)
+### [Credits](https://github.com/anniefenton/milestone-project-3#credits)
+- [Media](https://github.com/anniefenton/milestone-project-3#media)
+- [Code](https://github.com/anniefenton/milestone-project-3#code)
+- [Acknowledgements](https://github.com/anniefenton/milestone-project-3#acknowledgements)
 ## UX
 ### Project Goals
 Family recipes which are passed through the generations are special, yet are at risk of being lost forever due to the paper-based way they are kept. This site aims to be an alternative to this paper-based storage system and will keep family recipes safe for as long as the user wishes to store them. 
@@ -41,7 +74,7 @@ The part of the site shows the recipe cards that the user has created. Each card
 ### **Add recipes page**
 ![Screenshot of add recipe page](family_recipes/static/images/add-recipe.png)
 
-The add recipe button on the recipe page leads to the add recipe page where the user can insert details on the recipe they wish to store.Clicking on the button at the bottom of this page redirects the user back to the recipe page, updated with their new recipe card. 
+The add recipe button on the recipe page leads to the add recipe page where the user can insert details on the recipe they wish to store. Clicking on the button at the bottom of this page redirects the user back to the recipe page, updated with their new recipe card. 
 
 ### **Edit recipes**
 ![Screenshot of edit recipe page](family_recipes/static/images/edit-recipe.png)
@@ -129,7 +162,7 @@ The navigation has been designed to be simple and intuitive.
 
 ### **Bugs encountered**
 
-A bug was encountered when editing the database schema. Changes to the scheme were not shwoing on the deployed site. After a while the fix was found during manually migrating the edited scheme across the flask. The developer had to intensively research how to do this.
+A bug was encountered when editing the database schema. Changes to the scheme were not shwoing on the deployed site. After a while the fix was found - each edit of the schema had to be manually migrated across to flask using Flask-Migrate and Alembic.
 
 ## Technologies used
 ### **Languages**
@@ -172,7 +205,7 @@ SECTRET_KEY | a_secret_key
 ### Forking the GitHub repository
 
 1. Log into GitHub and find the 'milestone-project-3' repository on the 'anniefenton' account.
-2. At the top of the repository page, click on the 'fork' button. This will create a copy of the repository in your GitHub account. For more information follow this link.
+2. At the top of the repository page, click on the 'fork' button. This will create a copy of the repository in your GitHub account.
 
 ### Cloning a repository
 
@@ -181,16 +214,16 @@ SECTRET_KEY | a_secret_key
 3. Open Git Bash.
 4. Change the current working directory to the location where you want the cloned directory.
 5. Type 'git clone' and paste the URL you copied in step 2.
-6. Press enter. Your clone has been created. For more inforation, follow this link.
+6. Press enter. Your clone has been created.
 
 ## Credits
 
 ### Media
-The developer would like to thank Wasa Crispbread, Ella Olssen and Asterisk Kwon for their images used on the site which were accessed from Unsplash.
+I would like to thank Wasa Crispbread, Ella Olssen and Asterisk Kwon for their images used on the site which were accessed from Unsplash.
 
 ### Code
-All code, except where credited to other developers, libraries, or frameworks, has been writted by the developer. Credits and URLs have been provided as comments in the HTML, CSS, and JS files.
+All code, except where credited to other developers, libraries, or frameworks, has been writted by myself. Credits and URLs have been provided as comments in the HTML, CSS, and JS files.
 
 ### Acknowledgements
 
-The developer would specially like to thank the Code Institute's tutor support team for their help and support! She would also like to thank her mentor for feedback and guidance.
+I would specially like to thank the Code Institute's tutor support team for their help and support! I would also like to thank my mentor for feedback and guidance.
